@@ -10,4 +10,9 @@ Example
 `python -t github_clone_user.py --name anantshri --output "/tmp/test"`
 
 
+Requirement
+===========
 
+GitPython
+requests
+argparse

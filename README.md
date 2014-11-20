@@ -1,4 +1,7 @@
-github_cloner
+github cloner
 =============
 
-Clone github repositories of a user / organization
+This project is a simple script which will clone entire set of repositories for a user / organzation.
+
+
+

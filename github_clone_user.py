@@ -16,8 +16,8 @@ def main(argv):
     x=parser.parse_args()
     target=x.target
     output=x.out
-    if output=="":
-        output = "./"
+    if not output:
+        output = os.path.curdir
     cnt=1
     while (cnt > 0):
         url="https://api.github.com/users/" + target + "/repos?page=" + str(cnt) + "&per_page=100"
@@ -34,7 +34,7 @@ def main(argv):
             else:
                 for x in js_data:
                     git_url=x["clone_url"]
-                    out_name=output + os.sep + x["name"]
+                    out_name=os.path.join(output, x["name"])
 
                     print git_url
                     Repo.clone_from(git_url, out_name)

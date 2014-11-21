@@ -37,7 +37,6 @@ def main(argv):
                     out_name=output + os.sep + x["name"]
 
                     print git_url
-                    #Repo(git_url).clone(output)
                     Repo.clone_from(git_url, out_name)
         cnt=cnt+1
 

@@ -6,13 +6,13 @@ import os
 import sys
 from git import Repo
 
-def main(argv):
+def main():
     global outp
-    desc="""This program is used to  clone github repositories of a user / organization"""
+    desc="""This program is used to clone github repositories of a user / organization"""
     epilog="""Credit (C) Anant Shrivastava http://anantshri.info"""
     parser = argparse.ArgumentParser(description=desc,epilog=epilog)
-    parser.add_argument("--name",help="User name",dest='target',required=True)
-    parser.add_argument("--output",help="Output Directory",dest='out',required=False)
+    parser.add_argument("--user",help="User name",dest='target',required=True)
+    parser.add_argument("--outdir",help="Output Directory",dest='out',required=False)
     x=parser.parse_args()
     target=x.target
     output=x.out
@@ -42,4 +42,4 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    pass

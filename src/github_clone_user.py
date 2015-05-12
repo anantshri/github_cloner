@@ -41,9 +41,13 @@ def main():
                 for x in js_data:
                     git_url=x["clone_url"]
                     out_name=os.path.join(output, x["name"])
-
-                    print git_url
-                    Repo.clone_from(git_url, out_name)
+                    if os.path.isdir(out_name):
+                        print git_url + ": Directory already existing : let me pull the fresh updates for you"
+                        repo=Repo(out_name);
+                        repo.remotes.origin.pull()
+                    else:
+                        print git_url
+                        Repo.clone_from(git_url, out_name)
         cnt=cnt+1
 
 

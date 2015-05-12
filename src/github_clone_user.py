@@ -24,7 +24,6 @@ def main():
         cnt=int(pcount)
     if not output:
         output = os.path.curdir
-    cnt=1
     while (cnt > 0):
         url="https://api.github.com/users/" + target + "/repos?page=" + str(cnt) + "&per_page=100"
         r=requests.get(url)

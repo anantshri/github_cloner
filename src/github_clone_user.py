@@ -13,9 +13,15 @@ def main():
     parser = argparse.ArgumentParser(description=desc,epilog=epilog)
     parser.add_argument("--user",help="User name",dest='target',required=True)
     parser.add_argument("--outdir",help="Output Directory",dest='out',required=False)
+    parser.add_argument("--page",help="Page number, 1Page == 100 results",dest='pcount',required=False)
     x=parser.parse_args()
     target=x.target
     output=x.out
+    pcount=x.pcount
+    if not pcount:
+        cnt=1
+    else:
+        cnt=int(pcount)
     if not output:
         output = os.path.curdir
     cnt=1

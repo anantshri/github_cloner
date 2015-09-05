@@ -11,7 +11,7 @@ Install
 Usage
 ===========
 ```
-usage: ghclone [-h] --user TARGET [--outdir OUT] [--page PCOUNT]
+usage: ghclone [-h] --user TARGET [--outdir OUT] [--page PCOUNT] [--use-ssh]
 
 This program is used to clone github repositories of a user / organization
 
@@ -20,6 +20,7 @@ optional arguments:
   --user TARGET  User name
   --outdir OUT   Output Directory
   --page PCOUNT  Page number, 1Page == 100 results
+  --use-ssh      Use ssh instead of https.
 
 Credit (C) Anant Shrivastava http://anantshri.info
 

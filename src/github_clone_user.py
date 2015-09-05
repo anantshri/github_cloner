@@ -14,6 +14,7 @@ def main():
     parser.add_argument("--user",help="User name",dest='target',required=True)
     parser.add_argument("--outdir",help="Output Directory",dest='out',required=False)
     parser.add_argument("--page",help="Page number, 1Page == 100 results",dest='pcount',required=False)
+    parser.add_argument("--use-ssh",help="Use ssh instead of https.",dest='useSSH',required=False,action='store_true')
     x=parser.parse_args()
     target=x.target
     output=x.out
@@ -37,11 +38,12 @@ def main():
                 print "Rate limit reached"
                 cnt = -10
             else:
-                for x in js_data:
-                    git_url=x["clone_url"]
-                    out_name=os.path.join(output, x["name"])
+                for y in js_data:
+		    if x.useSSH: git_url=y["ssh_url"]
+		    else: git_url=y["clone_url"]
+                    out_name=os.path.join(output, y["name"])
                     if os.path.isdir(out_name):
-                        print git_url + ": Directory already existing : let me pull the fresh updates for you"
+                        print git_url + ": Directory already existing - let me pull the fresh updates for you"
                         repo=Repo(out_name);
                         repo.remotes.origin.pull()
                     else:

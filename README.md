@@ -22,8 +22,8 @@ optional arguments:
   --page PCOUNT  Page number, 1Page == 100 results
   --use-ssh      Use ssh instead of https.
 
-Credit (C) Anant Shrivastava http://anantshri.info
-
+Credit (C) Anant Shrivastava http://anantshri.info and Contributors: Akash
+Shende and Viktor Ahlstrom
 ```
 
 Example

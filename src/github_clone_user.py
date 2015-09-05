@@ -9,7 +9,8 @@ from git import Repo
 def main():
     global outp
     desc="""This program is used to clone github repositories of a user / organization"""
-    epilog="""Credit (C) Anant Shrivastava http://anantshri.info"""
+    epilog="""Credit (C) Anant Shrivastava http://anantshri.info
+    Contributors: Akash Shende and Viktor Ahlstrom"""
     parser = argparse.ArgumentParser(description=desc,epilog=epilog)
     parser.add_argument("--user",help="User name",dest='target',required=True)
     parser.add_argument("--outdir",help="Output Directory",dest='out',required=False)

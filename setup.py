@@ -10,7 +10,7 @@ setup(	name="Github Cloner",
 			'console_scripts': [ 'ghclone = src.github_clone_user:main']
 						},
 		author="Anantshri",
-		author_email="anant@email.info",
+		author_email="anant@anantshri.info",
 		description="Tool to clone any users Github repos.",
 		license=open('LICENSE').read()
 		)

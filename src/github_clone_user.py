@@ -3,7 +3,6 @@ import json
 import requests
 import argparse
 import os
-import sys
 from git import Repo
 
 def main():

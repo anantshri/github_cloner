@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import json
-import requests
-import argparse
 import os
+import argparse
+import requests
 from git import Repo
 
 def main():
@@ -24,29 +24,29 @@ def main():
         cnt=int(pcount)
     if not output:
         output = os.path.curdir
-    while (cnt > 0):
+    while cnt > 0:
         url="https://api.github.com/users/" + target + "/repos?page=" + str(cnt) + "&per_page=100"
         r=requests.get(url)
         js_data=json.loads(r.content)
         if len(js_data) == 0:
-            print "No more repositories"
+            print("No more repositories")
             cnt = -10
         else:
-            print 'count: ' +  str(cnt) + ' : ' + str(len(js_data))
+            print('count: ' +  str(cnt) + ' : ' + str(len(js_data)))
             if  "message" in js_data and "API rate limit exceeded" in js_data["message"]:
-                print "Rate limit reached"
+                print("Rate limit reached")
                 cnt = -10
             else:
                 for y in js_data:
-		    if x.useSSH: git_url=y["ssh_url"]
-		    else: git_url=y["clone_url"]
+                    if x.useSSH: git_url=y["ssh_url"]
+                    else: git_url=y["clone_url"]
                     out_name=os.path.join(output, y["name"])
                     if os.path.isdir(out_name):
-                        print git_url + ": Directory already existing - let me pull the fresh updates for you"
+                        print(git_url + ": Directory already existing - let me pull the fresh updates for you")
                         repo=Repo(out_name);
                         repo.remotes.origin.pull()
                     else:
-                        print git_url
+                        print(git_url)
                         Repo.clone_from(git_url, out_name)
         cnt=cnt+1
 

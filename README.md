@@ -22,13 +22,12 @@ optional arguments:
   --page PCOUNT  Page number, 1Page == 100 results
   --use-ssh      Use ssh instead of https.
 
-Credit (C) Anant Shrivastava http://anantshri.info and Contributors: Akash
-Shende and Viktor Ahlstrom
+Credit (C) Anant Shrivastava http://anantshri.info and Contributors: Akash Shende, Viktor Ahlstrom, Alexander Couzens and tiikeri
 ```
 
 Example
 =======
-`ghclone --user akash0x53 --outdir my_repos`
+`ghclone --user anantshri --outdir my_repos`
 
 Requirement
 ===========

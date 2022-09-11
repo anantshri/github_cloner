@@ -3,9 +3,9 @@
 from setuptools import setup, find_packages
 
 setup(	name="Github Cloner",
-		version="0.1",
+		version="0.2",
 		packages=find_packages(),
-		install_requires=[ 'GitPython>=0.3.6', 'requests>=2.6.0' ],
+		install_requires=[ 'GitPython>=3.1.27', 'requests>=2.20.0' ],
 		entry_points={
 			'console_scripts': [ 'ghclone = src.github_clone_user:main']
 						},
